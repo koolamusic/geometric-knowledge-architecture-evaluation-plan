@@ -1,5 +1,18 @@
 # Amendments
 
+## Version 4 (tag plan-v4), 2026-10-16
+
+Made before any evaluation data existed. The thesis gains two ways to fail (a graph-augmented retrieval arm built without persisted Claims, and the graph pipeline baseline entering the artifact decision rule), and the propagation check gains a binding drop condition. No success bar was lowered, no sample size reduced, and no stopping or drop rule loosened.
+
+Each item is what changed in Section 10, before → after, and why. No threshold was lowered, no sample was shrunk, no stopping rule was loosened and no drop condition was softened.
+
+1. Registration. Before: version 3, tag plan-v3. After: "version 4 of a registration whose amendments are public", and the reference reads "Version 4 … tag plan-v4". Why: this is the fourth registered version of the plan.
+2. New retrieval arm (10.1). Before: the only graph-augmented arm, (vii), joined its graph candidates to an index that holds the system's Claims. After: adds "(viii) the same graph-augmented arm built on (v), so that neither its index nor its graph holds Claims, the graph-augmented retrieval half of the alternative". Why: the alternative to persistence includes graph-augmented retrieval, so it needs an arm without Claims.
+3. System gain (10.1). Before: the system gain was (iii) minus (v) only. After: it is "(iii) minus (v) and (iii) minus (viii)". The clause passes only if the system is positive and significant against both, each powered for 0.03 at the clause's Holm level, an intersection-union test that needs no further correction. Unless both pass, the quality half fails on retrieval. The Holm family still has five clauses. Why: adds a way for the thesis to fail.
+4. Artifact decision rule (10.2). Before: the persisted model counted as contributing if the system was preferred significantly to (c) and passed the guard. After: it must be preferred significantly to (c) and to the GraphRAG-style pipeline (b), the latter at its Holm level, and pass the guard. Otherwise the quality half fails on artifacts and generation falls back to (c). Why: a graph pipeline without Claims is part of the alternative; adds a way for the thesis to fail.
+5. What falsifies the thesis (10.7). Before: the quality half failed against the Signals-only arm or per-request reasoning. After: it also fails against "the graph-augmented arm without Claims" and "the GraphRAG-style pipeline". Why: consistent with items 3 and 4.
+6. Propagation drop condition (10.3). Before: a minimal-change check or global-relabelling comparison that was not exact was "fixed and rerun", with no limit and no drop. After: it is fixed and rerun "at most twice". If it is still not exact after the second rerun, local propagation is dropped: every change triggers global relabelling of the workspace, which needs no model calls but visits every node, so the locality claim of Section 3.4 is withdrawn and the ledger reports the relabelling compute in M(m). Why: the propagation mechanism now has a binding consequence if it fails.
+
 ## Version 3 (tag plan-v3), 2026-10-15
 
 Made before any evaluation data existed. The entailment check that gates every write becomes a confirmatory component with its own baseline, bar and binding drop rule; every other change adds a test, sample or consequence, corrects wording, or clarifies. No success bar was lowered, no sample size reduced, and no stopping or drop rule loosened.
