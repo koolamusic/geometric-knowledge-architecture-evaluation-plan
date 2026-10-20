@@ -1,5 +1,9 @@
 # Amendments
 
+## Registered plan (tag registered-plan), 2026-10-20
+
+The plan is consolidated into one general document under the paper's new title, with all four authors. Its tests are organized around writer and reader models: each model takes a role only after passing that role's qualification test, and the earlier untested premise about which model should derive becomes the Deriver's qualification test. The cost ledger and its break-even condition are kept as deployment rules. Made before any evaluation data existed; no success bar was lowered, no sample size reduced, and no stopping or drop rule loosened.
+
 ## Version 5 (tag plan-v5), 2026-10-20
 
 Made before any evaluation data existed. The plan now states a closed list of the components it evaluates, each with its baseline, metric, test set, threshold and drop condition, and lists every other mechanism of the design with the reason it is not a separate component. Supports verdicts gain a baseline. No success bar was lowered, no sample size reduced, and no stopping or drop rule loosened.
