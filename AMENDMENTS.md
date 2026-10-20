@@ -1,5 +1,39 @@
 # Amendments
 
+## Version 5 (tag plan-v5), 2026-10-20
+
+Made before any evaluation data existed. The plan now states a closed list of the components it evaluates, each with its baseline, metric, test set, threshold and drop condition, and lists every other mechanism of the design with the reason it is not a separate component. Supports verdicts gain a baseline. No success bar was lowered, no sample size reduced, and no stopping or drop rule loosened.
+
+Each item is what changed in Section 10, before → after, and why. No threshold was lowered, no sample was shrunk, no stopping rule was loosened and no drop condition was softened.
+
+1. Registration. Before: version 4, tag plan-v4. After: "version 5 of a registration whose amendments are public", and the reference reads "Version 5 … tag plan-v5". Why: this is the fifth registered version of the plan.
+2. Closed list of components. Before: components were described subsection by subsection, and the plan did not say which mechanisms counted as components. After: a list at the top of Section 10 names exactly eighteen components. Each has its baseline, metric, test set, threshold and drop condition in the subsection named. "Shared" marks a test set supplied by the shared protocol, which also supplies annotation, leakage and stopping rules to all. Why: the plan now states its own scope.
+3. Mechanisms that are not components. Before: no such statement. After: a list says where every other named mechanism is decided:
+   - the cycle check and precondition migration: inside the propagation test;
+   - lifting, re-derivation and probe staleness: inside the contradiction-check, compounding and staleness tests;
+   - the decision model: inside the Router and Domain classifier tests;
+   - the Useful screen, the query-projection cost bound and projection staleness: inside the Dimension-term test;
+   - the permutation and half-gain rules: attribution checks layered on primaries that must already be significant;
+   - positive controls and outcome-neutral checks: pipeline checks;
+   - system gains and the artifact decision rule: thesis tests (10.7);
+   - the graph gain and the small-tier deriver: reported only;
+   - natural-contradiction recall and the cross-Domain and after-Signal exclusions: exploratory, since natural cases cannot be counted in advance;
+   - compute other than model calls: reported in machine-hours, except relabelling after the propagation drop, which M(m) carries;
+   - a smallest effect of practical interest: none beyond the design effect.
+   Why: no named mechanism is left without a stated status.
+4. Supports verdicts (10.3). Before: 150 sampled justifications of unstated source, judged against an absolute bar only. After:
+   - Sample: 230 supports verdicts drawn at random from those the injected arms and the 10.4 replay wrote, judged blind.
+   - Baseline: 230 random candidate pairs from the same checks, which is what treating every candidate as support would add.
+   - Bar: precision above 0.7 (design value 0.8), and above the baseline by the same one-sided two-proportion test as automatic acceptance (design effect 0.10; 230 per sample give 80% power).
+   - Drop: supports verdicts stop writing justifications if either clause fails.
+   Why: the component now has something to beat and a stated sample source. The sample size was raised to power the comparison.
+5. Signal-branch recall between the drop bound and the primary bar (10.3). Before: recall that failed the primary bar but passed the drop condition changed nothing. After: "the Signal branch runs at k = 50 with no floor, the passing configuration, at the ledger's cost". Why: every failing outcome now has a consequence.
+6. Index for 10.1 and 10.2 (Leakage). Before: Claims came "only from requests in other sessions", with no count or source. After: "the slow path run before any held-out look on every reason- or author-labelled request outside held-out sessions, the count reported". Why: the index behind the Claims-in-index and system gains is now specified.
+7. Agreement triggers (shared protocol). Before: queries and items "with κ < 0.4" were re-adjudicated, which is undefined for a single item. After: a query's κ is "computed over the query's pooled items", and "every disagreement goes to a third annotator". Why: the triggers can be executed, and adjudication is broader than before.
+8. Planning standard deviation. Before: 0.15 was stated without a source. After: "an assumed planning value with no published source", still replaced by the internal-pilot estimate before any final sample size is set. Why: states its status.
+9. N̄ defined at first use (10.4). Before: N̄ was used before its definition. After: "the same pilot logs as N̄, the read queries per slow-path request". Why: reading order.
+10. Wording: the introduction's list of fields per subsection was removed, since the component list now carries it. No threshold, sample, stopping rule or drop condition changed.
+
 ## Version 4 (tag plan-v4), 2026-10-16
 
 Made before any evaluation data existed. The thesis gains two ways to fail (a graph-augmented retrieval arm built without persisted Claims, and the graph pipeline baseline entering the artifact decision rule), and the propagation check gains a binding drop condition. No success bar was lowered, no sample size reduced, and no stopping or drop rule loosened.
